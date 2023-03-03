@@ -1,0 +1,17 @@
+{% macro render_field(field) %}
+
+<div class="form">
+    
+    {{ field(class="form", **kwargs)  }}
+    
+    {% for error in field.errors %}
+    <h4>
+        {{error}}
+    </h4>
+
+    {% endfor   %}        
+</div>
+{% endmacro %}
+
+
+

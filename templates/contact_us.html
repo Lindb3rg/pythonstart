@@ -1,0 +1,72 @@
+{% extends "baseTemplate.html" %}
+{% from "_formhelpers.html" import render_field %}
+
+
+{% block content %}
+
+<div class="contact">
+<form class="form" method="post">
+    {{ form.csrf_token }}
+
+  
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+
+ 
+    <tr>
+      <td>Namn</td>
+      <td>{{ render_field(form.namn) }}</td>
+      <td></td>
+    </tr>
+
+
+    <tr>
+      <td>Epost</td>
+      <td>{{ render_field(form.epost) }}</td>
+      <td></td>
+      
+      
+      
+    </tr>
+
+    <tr>
+      <td>Telefon</td>
+      <td>{{ render_field(form.telefon) }}</td>
+      <td></td>
+      
+      
+    </tr>
+
+    <tr>
+      <td>Ärende</td>
+      <td>{{ render_field(form.rubrik) }}</td>
+      <td></td>
+      
+      
+    </tr>
+
+    <tr>
+      <td>Text</td>
+      <td>{{ render_field(form.text)}}</td>
+      <td></td>
+      
+      
+    </tr>
+    <tr>
+        <td>
+            <button  type ="submit">Skicka</button>
+        </td>
+        <td></td>
+    </tr>
+</table>
+</div>
+
+
+
+
+
+
+{% endblock  %}

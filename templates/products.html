@@ -1,0 +1,37 @@
+{% extends "baseTemplate.html" %}
+
+
+{% block content %}
+
+
+<section class="home" id="home">
+
+    <div class="content">
+        <h1>Products</h1>
+        {%for product in products%}
+        <table>
+            <tr>
+                <td>{{product.ProductName}}</td>
+                <td>{{product.Color}}</td>
+                <td>{{product.RatingCount}}</td>
+                <td>{{product.Price}}</td>
+            </tr>
+        </table>
+        {%endfor%}
+        
+    </div>
+        
+</section>
+
+
+{% endblock  %}
+
+ProductName = db.Column(db.String(100), unique=False, nullable=False)
+Color = db.Column(db.String(40), unique=False, nullable=False)
+Created = db.Column(db.DateTime, unique=False, nullable=False)
+LastBought = db.Column(db.DateTime, unique=False, nullable=True)
+ImageUrl = db.Column(db.String(100), unique=False, nullable=False)
+Rating = db.Column(db.Float, unique=False, nullable=False)
+RatingCount = db.Column(db.Integer, unique=False, nullable=False)
+CategoryName = db.Column(db.String(40), unique=False, nullable=False)
+Price = db.Column(db.Integer, unique=False, nullable=False)
